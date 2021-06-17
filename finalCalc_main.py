@@ -3,12 +3,12 @@ from PyQt5.QtWidgets import QMainWindow
 from finalCalc import *
 import sys
 import math
-from PyQt5.QtCore import Qt, QEvent
+from PyQt5.QtCore import Qt
 
 
 class CalculatorApp(QMainWindow, Ui_MainWindow):
-    def __init__(self, parent=None):
-        super(CalculatorApp, self).__init__(parent)
+    def __init__(self):
+        super(CalculatorApp, self).__init__()
         self.setupUi(self)
         # Clear Button uses press_it method
         self.clearButton.clicked.connect(lambda: self.press_it("C"))
@@ -59,7 +59,6 @@ class CalculatorApp(QMainWindow, Ui_MainWindow):
         self.twoButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.oneButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.zeroButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-
 
     def plus_minus_invert(self):
         screen = self.outputlabel.text()
@@ -143,7 +142,6 @@ class CalculatorApp(QMainWindow, Ui_MainWindow):
                 self.outputlabel.setText("")
 
             self.outputlabel.setText(f'{self.outputlabel.text()}{pressed}')
-
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_0:
