@@ -145,7 +145,7 @@ class CalculatorApp(QMainWindow, Ui_MainWindow):
             self.outputlabel.setText(f'{self.outputlabel.text()}{pressed}')
 
 
-    def keyPressEvent(self,event):
+    def keyPressEvent(self, event):
         if event.key() == Qt.Key_0:
             self.press_it("0")
         elif event.key() == Qt.Key_1:
